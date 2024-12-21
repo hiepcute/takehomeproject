@@ -8,10 +8,15 @@
 import UIKit
 
 class UserTableViewCell: UITableViewCell {
+    
+    @IBOutlet weak var avataImageView: UIImageView!
+    @IBOutlet weak var userNameLabel: UILabel!
+    @IBOutlet weak var linkedinLabel: UILabel!
+    
 
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
+        
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
@@ -19,5 +24,8 @@ class UserTableViewCell: UITableViewCell {
 
         // Configure the view for the selected state
     }
+    
+    
+    
     
 }
