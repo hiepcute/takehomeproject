@@ -30,6 +30,15 @@
 		FA3BA1F02D169F1C00F47B21 /* UserTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA3BA1ED2D169F1C00F47B21 /* UserTableViewCell.swift */; };
 		FA3BA1F22D16A2D900F47B21 /* UserCellModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA3BA1F12D16A2D900F47B21 /* UserCellModel.swift */; };
 		FA3BA1F52D16A3A400F47B21 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = FA3BA1F42D16A3A400F47B21 /* Kingfisher */; };
+		FA3BA1FD2D17070C00F47B21 /* DetailsUserViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = FA3BA1FC2D17070C00F47B21 /* DetailsUserViewController.xib */; };
+		FA3BA1FE2D17070C00F47B21 /* DetailsUserWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA3BA1F72D17070C00F47B21 /* DetailsUserWorker.swift */; };
+		FA3BA1FF2D17070C00F47B21 /* DetailsUserRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA3BA1F82D17070C00F47B21 /* DetailsUserRouter.swift */; };
+		FA3BA2002D17070C00F47B21 /* DetailsUserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA3BA1F92D17070C00F47B21 /* DetailsUserViewController.swift */; };
+		FA3BA2012D17070C00F47B21 /* DetailsUserInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA3BA1FA2D17070C00F47B21 /* DetailsUserInteractor.swift */; };
+		FA3BA2022D17070C00F47B21 /* DetailsUserConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA3BA1FB2D17070C00F47B21 /* DetailsUserConfigurator.swift */; };
+		FA3BA2042D170AFA00F47B21 /* UIviewcontroller+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA3BA2032D170AFA00F47B21 /* UIviewcontroller+Extension.swift */; };
+		FA3BA2072D170E7600F47B21 /* DetailsUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA3BA2062D170E7600F47B21 /* DetailsUser.swift */; };
+		FA3BA2092D170E8F00F47B21 /* DetailsUser.xib in Resources */ = {isa = PBXBuildFile; fileRef = FA3BA2082D170E8F00F47B21 /* DetailsUser.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -74,6 +83,15 @@
 		FA3BA1ED2D169F1C00F47B21 /* UserTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserTableViewCell.swift; sourceTree = "<group>"; };
 		FA3BA1EE2D169F1C00F47B21 /* UserTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = UserTableViewCell.xib; sourceTree = "<group>"; };
 		FA3BA1F12D16A2D900F47B21 /* UserCellModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserCellModel.swift; sourceTree = "<group>"; };
+		FA3BA1F72D17070C00F47B21 /* DetailsUserWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsUserWorker.swift; sourceTree = "<group>"; };
+		FA3BA1F82D17070C00F47B21 /* DetailsUserRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsUserRouter.swift; sourceTree = "<group>"; };
+		FA3BA1F92D17070C00F47B21 /* DetailsUserViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsUserViewController.swift; sourceTree = "<group>"; };
+		FA3BA1FA2D17070C00F47B21 /* DetailsUserInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsUserInteractor.swift; sourceTree = "<group>"; };
+		FA3BA1FB2D17070C00F47B21 /* DetailsUserConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsUserConfigurator.swift; sourceTree = "<group>"; };
+		FA3BA1FC2D17070C00F47B21 /* DetailsUserViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DetailsUserViewController.xib; sourceTree = "<group>"; };
+		FA3BA2032D170AFA00F47B21 /* UIviewcontroller+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIviewcontroller+Extension.swift"; sourceTree = "<group>"; };
+		FA3BA2062D170E7600F47B21 /* DetailsUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsUser.swift; sourceTree = "<group>"; };
+		FA3BA2082D170E8F00F47B21 /* DetailsUser.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DetailsUser.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -209,6 +227,7 @@
 			isa = PBXGroup;
 			children = (
 				FA3BA1E72D169A6700F47B21 /* Constant.swift */,
+				FA3BA2032D170AFA00F47B21 /* UIviewcontroller+Extension.swift */,
 			);
 			name = Utilities;
 			path = "Utilitíe";
@@ -235,8 +254,24 @@
 		FA3BA1F62D1706BF00F47B21 /* DetailsUser */ = {
 			isa = PBXGroup;
 			children = (
+				FA3BA2052D170E4B00F47B21 /* View */,
+				FA3BA1F72D17070C00F47B21 /* DetailsUserWorker.swift */,
+				FA3BA1F82D17070C00F47B21 /* DetailsUserRouter.swift */,
+				FA3BA1F92D17070C00F47B21 /* DetailsUserViewController.swift */,
+				FA3BA1FA2D17070C00F47B21 /* DetailsUserInteractor.swift */,
+				FA3BA1FB2D17070C00F47B21 /* DetailsUserConfigurator.swift */,
+				FA3BA1FC2D17070C00F47B21 /* DetailsUserViewController.xib */,
 			);
 			path = DetailsUser;
+			sourceTree = "<group>";
+		};
+		FA3BA2052D170E4B00F47B21 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				FA3BA2062D170E7600F47B21 /* DetailsUser.swift */,
+				FA3BA2082D170E8F00F47B21 /* DetailsUser.xib */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -357,6 +392,8 @@
 				FA3BA1A62D1481EE00F47B21 /* Assets.xcassets in Resources */,
 				FA3BA1D42D14845800F47B21 /* ListUserInformationViewController.xib in Resources */,
 				FA3BA1A92D1481EE00F47B21 /* Base in Resources */,
+				FA3BA1FD2D17070C00F47B21 /* DetailsUserViewController.xib in Resources */,
+				FA3BA2092D170E8F00F47B21 /* DetailsUser.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -384,6 +421,11 @@
 				FA3BA1A12D1481ED00F47B21 /* ViewController.swift in Sources */,
 				FA3BA1F22D16A2D900F47B21 /* UserCellModel.swift in Sources */,
 				FA3BA1D52D14845800F47B21 /* ListUserInformationWorker.swift in Sources */,
+				FA3BA1FE2D17070C00F47B21 /* DetailsUserWorker.swift in Sources */,
+				FA3BA1FF2D17070C00F47B21 /* DetailsUserRouter.swift in Sources */,
+				FA3BA2002D17070C00F47B21 /* DetailsUserViewController.swift in Sources */,
+				FA3BA2012D17070C00F47B21 /* DetailsUserInteractor.swift in Sources */,
+				FA3BA2022D17070C00F47B21 /* DetailsUserConfigurator.swift in Sources */,
 				FA3BA1D62D14845800F47B21 /* ListUserInformationRouter.swift in Sources */,
 				FA3BA1E02D166ACE00F47B21 /* NetworkServices.swift in Sources */,
 				FA3BA1F02D169F1C00F47B21 /* UserTableViewCell.swift in Sources */,
@@ -393,7 +435,9 @@
 				FA3BA1D92D14845800F47B21 /* ListUserInformationConfigurator.swift in Sources */,
 				FA3BA1E82D169A6700F47B21 /* Constant.swift in Sources */,
 				FA3BA19D2D1481ED00F47B21 /* AppDelegate.swift in Sources */,
+				FA3BA2072D170E7600F47B21 /* DetailsUser.swift in Sources */,
 				FA3BA19F2D1481ED00F47B21 /* SceneDelegate.swift in Sources */,
+				FA3BA2042D170AFA00F47B21 /* UIviewcontroller+Extension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -35,7 +35,16 @@ class ListUserInformationInteractor {
                 presenter.hideLoading()
                 await presenter.fetchDataSuccessFully()
                 
-            } catch {
+            } catch let error as NetworkError {
+                presenter.hideLoading()
+                switch error {
+                case .invalidResponse:
+                    await presenter.fetchDataError(error: "invalidResponse")
+                case .decodingFailed:
+                    await presenter.fetchDataError(error: "decodingFailed")
+                case .custom(let error):
+                   await presenter.fetchDataError(error: error)
+                }
                 
             }
         }

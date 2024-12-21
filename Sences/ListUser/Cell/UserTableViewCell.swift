@@ -22,6 +22,7 @@ class UserTableViewCell: UITableViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
+        setupLinkedInprofile()
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
@@ -30,7 +31,6 @@ class UserTableViewCell: UITableViewCell {
     
     override func layoutSubviews() {
         super.layoutSubviews()
-        contentView.frame = contentView.frame.inset(by: UIEdgeInsets(top: 0, left: 10, bottom: 10, right: 10))
         setupContainerView()
         setupContainerImageView()
         setupImageView()
@@ -56,6 +56,20 @@ class UserTableViewCell: UITableViewCell {
         borderView.layer.borderColor = UIColor.black.cgColor
         avataImageView.contentMode = .scaleToFill
         borderView.layer.cornerRadius = borderView.frame.height/2
+    }
+    
+    private func setupLinkedInprofile() {
+        let text = "https://www.linkedin.com/"
+        
+        // Tạo một NSMutableAttributedString với gạch chân và màu xanh
+        let attributedString = NSMutableAttributedString(string: text)
+        
+        // Đặt màu xanh cho toàn bộ văn bản
+        attributedString.addAttribute(.foregroundColor, value: UIColor.blue, range: (text as NSString).range(of: text))
+        
+        // Gạch chân toàn bộ văn bản
+        attributedString.addAttribute(.underlineStyle, value: NSUnderlineStyle.single.rawValue, range: (text as NSString).range(of: text))
+        linkedinLabel.attributedText = attributedString
     }
     
     func setupData(model: UserCellModel) {

@@ -19,7 +19,7 @@ protocol ListUserInformationPresentationLogic: AnyObject {
     
     /// Use this function to handle scenarios where an error occurs while fetching data.
     /// Typically, log the error, show an error message alert to the user,
-    func fetchDataError()
+    @MainActor func fetchDataError(error: String)
     ///show loading indicator
     func showLoading()
     /// hide loading indicator
@@ -48,6 +48,10 @@ class ListUserInformationViewController: UIViewController {
         interactor.fetchUser()
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        navigationController?.navigationBar.isHidden = true
+    }
     
     
     // MARK: SetupUI
@@ -61,11 +65,21 @@ class ListUserInformationViewController: UIViewController {
         tableView.register(UINib(nibName: "UserTableViewCell", bundle: nil), forCellReuseIdentifier: UserTableViewCell.identifier)
     }
     
+    @IBAction func didTapBackButton(_ sender: Any) {
+        let vc = DetailsUserConfigurator.viewcontroller()
+        self.navigationController?.pushViewController(vc, animated: false)
+    }
+    
+    
     // MARK: IBAction
 }
 
 // MARK: Connect View, Interactor, and Presenter
 extension ListUserInformationViewController: ListUserInformationPresentationLogic {
+  @MainActor  func fetchDataError(error: String) {
+        self.showAlert(title: "Notification", message: error)
+    }
+    
     func showLoading() {
         SVProgressHUD.show()
     }
@@ -75,10 +89,6 @@ extension ListUserInformationViewController: ListUserInformationPresentationLogi
     
     func fetchDataSuccessFully() {
         self.tableView.reloadData()
-    }
-    
-    func fetchDataError() {
-        
     }
     
 }
@@ -99,5 +109,9 @@ extension ListUserInformationViewController: UITableViewDelegate, UITableViewDat
    
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return UITableView.automaticDimension
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+            router.navigationToDetailsViewcontroller()
     }
 }

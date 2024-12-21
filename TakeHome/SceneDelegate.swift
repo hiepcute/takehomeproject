@@ -20,7 +20,8 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         // Tạo UIWindow và ViewController đầu tiên
         window = UIWindow(windowScene: windowScene)
         let listUserInformation = ListUserInformationConfigurator.viewcontroller()
-        window?.rootViewController = listUserInformation
+        let nav = UINavigationController(rootViewController: listUserInformation)
+        window?.rootViewController = nav
         window?.makeKeyAndVisible()
     }
 
