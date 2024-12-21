@@ -9,7 +9,7 @@
 
 /// ListUserInformation Module Interactor Protocol
 protocol ListUserInformationInteractorLogic {
-    
+    func fetchUser()
 }
 
 /// ListUserInformation Module Interactor
@@ -20,6 +20,21 @@ class ListUserInformationInteractor {
     
     required init(withWorker worker: ListUserInformationWorkerLogic) {
         self.worker = worker
+    }
+    
+    func fetchUser() {
+        presenter.showLoading()
+        Task {
+            do {
+                
+                let result = try await worker.fetchUserInformation(url: Constant.APIEndPoint.userInformationAPI)
+                presenter.hideLoading()
+                print("========== result === \(result)==============")
+                
+            } catch {
+                
+            }
+        }
     }
 }
 

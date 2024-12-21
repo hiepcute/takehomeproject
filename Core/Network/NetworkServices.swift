@@ -60,6 +60,7 @@ class NetworkService {
                 request.addValue(value, forHTTPHeaderField: key)
             }
         }
+        
         request.httpBody = body
 
         // Perform the network request

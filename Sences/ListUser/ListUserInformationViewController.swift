@@ -8,6 +8,7 @@
 //
 
 import UIKit
+import SVProgressHUD
 
 // MARK: Presenter Interface
 protocol ListUserInformationPresentationLogic: AnyObject {
@@ -19,6 +20,10 @@ protocol ListUserInformationPresentationLogic: AnyObject {
     /// Use this function to handle scenarios where an error occurs while fetching data.
     /// Typically, log the error, show an error message alert to the user,
     func fetchDataError()
+    ///show loading indicator
+    func showLoading()
+    /// hide loading indicator
+    func hideLoading()
 }
 
 // MARK: View
@@ -40,7 +45,7 @@ class ListUserInformationViewController: UIViewController {
     
     // MARK: Fetch ListUserInformation
     private func fetchDataOnLoad() {
-      
+        interactor.fetchUser()
     }
     
     
@@ -60,6 +65,13 @@ class ListUserInformationViewController: UIViewController {
 
 // MARK: Connect View, Interactor, and Presenter
 extension ListUserInformationViewController: ListUserInformationPresentationLogic {
+    func showLoading() {
+        SVProgressHUD.show()
+    }
+    func hideLoading() {
+        SVProgressHUD.dismiss()
+    }
+    
     func fetchDataSuccessFully() {
         
     }
