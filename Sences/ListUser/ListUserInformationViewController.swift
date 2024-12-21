@@ -11,7 +11,14 @@ import UIKit
 
 // MARK: Presenter Interface
 protocol ListUserInformationPresentationLogic: AnyObject {
+    /// Fetches data successfully and performs appropriate actions upon success.
+    /// Use this function to handle scenarios where data fetching completes successfully.
+    /// Typically, you might update the UI, process the received data to tableview
+    func fetchDataSuccessFully()
     
+    /// Use this function to handle scenarios where an error occurs while fetching data.
+    /// Typically, log the error, show an error message alert to the user,
+    func fetchDataError()
 }
 
 // MARK: View
@@ -53,6 +60,14 @@ class ListUserInformationViewController: UIViewController {
 
 // MARK: Connect View, Interactor, and Presenter
 extension ListUserInformationViewController: ListUserInformationPresentationLogic {
+    func fetchDataSuccessFully() {
+        
+    }
+    
+    func fetchDataError() {
+        
+    }
+    
     
 }
 

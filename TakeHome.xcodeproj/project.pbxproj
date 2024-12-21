@@ -21,6 +21,9 @@
 		FA3BA1D72D14845800F47B21 /* ListUserInformationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA3BA1D02D14845800F47B21 /* ListUserInformationViewController.swift */; };
 		FA3BA1D82D14845800F47B21 /* ListUserInformationInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA3BA1D12D14845800F47B21 /* ListUserInformationInteractor.swift */; };
 		FA3BA1D92D14845800F47B21 /* ListUserInformationConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA3BA1D22D14845800F47B21 /* ListUserInformationConfigurator.swift */; };
+		FA3BA1E02D166ACE00F47B21 /* NetworkServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA3BA1DF2D166ACE00F47B21 /* NetworkServices.swift */; };
+		FA3BA1E32D166E9F00F47B21 /* UserInformationModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA3BA1E22D166E9F00F47B21 /* UserInformationModel.swift */; };
+		FA3BA1E62D16718700F47B21 /* SwiftyJSON in Frameworks */ = {isa = PBXBuildFile; productRef = FA3BA1E52D16718700F47B21 /* SwiftyJSON */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -59,6 +62,8 @@
 		FA3BA1D12D14845800F47B21 /* ListUserInformationInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListUserInformationInteractor.swift; sourceTree = "<group>"; };
 		FA3BA1D22D14845800F47B21 /* ListUserInformationConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListUserInformationConfigurator.swift; sourceTree = "<group>"; };
 		FA3BA1D32D14845800F47B21 /* ListUserInformationViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ListUserInformationViewController.xib; sourceTree = "<group>"; };
+		FA3BA1DF2D166ACE00F47B21 /* NetworkServices.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkServices.swift; sourceTree = "<group>"; };
+		FA3BA1E22D166E9F00F47B21 /* UserInformationModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInformationModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -66,6 +71,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FA3BA1E62D16718700F47B21 /* SwiftyJSON in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -89,6 +95,7 @@
 		FA3BA1902D1481ED00F47B21 = {
 			isa = PBXGroup;
 			children = (
+				FA3BA1DA2D16692200F47B21 /* Core */,
 				FA3BA1CC2D1483D800F47B21 /* Sences */,
 				FA3BA19B2D1481ED00F47B21 /* TakeHome */,
 				FA3BA1B22D1481EF00F47B21 /* TakeHomeTests */,
@@ -148,6 +155,7 @@
 		FA3BA1CD2D1483DE00F47B21 /* ListUser */ = {
 			isa = PBXGroup;
 			children = (
+				FA3BA1E12D166E6100F47B21 /* Model */,
 				FA3BA1CE2D14845800F47B21 /* ListUserInformationWorker.swift */,
 				FA3BA1CF2D14845800F47B21 /* ListUserInformationRouter.swift */,
 				FA3BA1D02D14845800F47B21 /* ListUserInformationViewController.swift */,
@@ -156,6 +164,47 @@
 				FA3BA1D32D14845800F47B21 /* ListUserInformationViewController.xib */,
 			);
 			path = ListUser;
+			sourceTree = "<group>";
+		};
+		FA3BA1DA2D16692200F47B21 /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				FA3BA1DE2D16694F00F47B21 /* Utilities */,
+				FA3BA1DD2D16694800F47B21 /* DataBase */,
+				FA3BA1DB2D16692A00F47B21 /* Network */,
+			);
+			path = Core;
+			sourceTree = "<group>";
+		};
+		FA3BA1DB2D16692A00F47B21 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				FA3BA1DF2D166ACE00F47B21 /* NetworkServices.swift */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		FA3BA1DD2D16694800F47B21 /* DataBase */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = DataBase;
+			sourceTree = "<group>";
+		};
+		FA3BA1DE2D16694F00F47B21 /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Utilities;
+			path = "Utilitíe";
+			sourceTree = "<group>";
+		};
+		FA3BA1E12D166E6100F47B21 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				FA3BA1E22D166E9F00F47B21 /* UserInformationModel.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -174,6 +223,9 @@
 			dependencies = (
 			);
 			name = TakeHome;
+			packageProductDependencies = (
+				FA3BA1E52D16718700F47B21 /* SwiftyJSON */,
+			);
 			productName = TakeHome;
 			productReference = FA3BA1992D1481ED00F47B21 /* TakeHome.app */;
 			productType = "com.apple.product-type.application";
@@ -246,6 +298,9 @@
 				Base,
 			);
 			mainGroup = FA3BA1902D1481ED00F47B21;
+			packageReferences = (
+				FA3BA1E42D16718700F47B21 /* XCRemoteSwiftPackageReference "SwiftyJSON" */,
+			);
 			productRefGroup = FA3BA19A2D1481ED00F47B21 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -292,7 +347,9 @@
 				FA3BA1A12D1481ED00F47B21 /* ViewController.swift in Sources */,
 				FA3BA1D52D14845800F47B21 /* ListUserInformationWorker.swift in Sources */,
 				FA3BA1D62D14845800F47B21 /* ListUserInformationRouter.swift in Sources */,
+				FA3BA1E02D166ACE00F47B21 /* NetworkServices.swift in Sources */,
 				FA3BA1D72D14845800F47B21 /* ListUserInformationViewController.swift in Sources */,
+				FA3BA1E32D166E9F00F47B21 /* UserInformationModel.swift in Sources */,
 				FA3BA1D82D14845800F47B21 /* ListUserInformationInteractor.swift in Sources */,
 				FA3BA1D92D14845800F47B21 /* ListUserInformationConfigurator.swift in Sources */,
 				FA3BA19D2D1481ED00F47B21 /* AppDelegate.swift in Sources */,
@@ -627,6 +684,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		FA3BA1E42D16718700F47B21 /* XCRemoteSwiftPackageReference "SwiftyJSON" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SwiftyJSON/SwiftyJSON.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.0.2;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		FA3BA1E52D16718700F47B21 /* SwiftyJSON */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = FA3BA1E42D16718700F47B21 /* XCRemoteSwiftPackageReference "SwiftyJSON" */;
+			productName = SwiftyJSON;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = FA3BA1912D1481ED00F47B21 /* Project object */;
 }

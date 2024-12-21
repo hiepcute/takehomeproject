@@ -6,15 +6,29 @@
 //  Copyright © 2024 ___ORGANIZATIONNAME___. All rights reserved.
 //
 //
+import Foundation
 
 protocol ListUserInformationWorkerLogic {
-    
+    /// Fetches user information from the provided URL using async/await.
+    ///
+    /// - Parameter url: The URL of the request as a String.
+    /// - Returns: An array of `UserInformationModel`.
+    /// - Throws: An error if the request fails or decoding fails.
+    func fetchUserInformation(url: String) async throws -> [UserInformationModel]
 }
 
 class ListUserInformationWorker: ListUserInformationWorkerLogic {
-    // MARK: Business Logic
-    
-    func doSomeWork() {
-        // NOTE: Do the work
+    func fetchUserInformation(url: String) async throws -> [UserInformationModel] {
+        let urlSession = URLSession.shared
+        let networkServices = NetworkService(session: urlSession)
+        guard let url = URL(string: url) else { throw CommonError.URLinValid }
+        let model: [UserInformationModel] = try await networkServices.fetchData(from: url, responseType: [UserInformationModel].self)
+        return model
+        
     }
+
+}
+
+enum CommonError: Error {
+    case URLinValid
 }
