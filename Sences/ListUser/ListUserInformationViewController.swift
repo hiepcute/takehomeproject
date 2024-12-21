@@ -19,6 +19,9 @@ class ListUserInformationViewController: UIViewController {
     var interactor: ListUserInformationInteractorLogic!
     var router: ListUserInformationRoutingLogic!
     
+    @IBOutlet var titleLabel: UIView!
+    @IBOutlet weak var tableView: UITableView!
+    
     // MARK: IBOutlet
     
     // MARK: View lifecycle
@@ -31,12 +34,18 @@ class ListUserInformationViewController: UIViewController {
     // MARK: Fetch ListUserInformation
     private func fetchDataOnLoad() {
       
-        
     }
+    
+    
     
     // MARK: SetupUI
     private func setupView() {
-        view.backgroundColor = .red
+        setupTableView()
+    }
+    
+    private func setupTableView() {
+        tableView.delegate = self
+        tableView.dataSource = self
     }
     
     // MARK: IBAction
@@ -45,4 +54,14 @@ class ListUserInformationViewController: UIViewController {
 // MARK: Connect View, Interactor, and Presenter
 extension ListUserInformationViewController: ListUserInformationPresentationLogic {
     
+}
+
+extension ListUserInformationViewController: UITableViewDelegate, UITableViewDataSource {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 1
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        return UITableViewCell()
+    }
 }
