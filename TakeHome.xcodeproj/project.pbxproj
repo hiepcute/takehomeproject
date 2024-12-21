@@ -24,6 +24,12 @@
 		FA3BA1E02D166ACE00F47B21 /* NetworkServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA3BA1DF2D166ACE00F47B21 /* NetworkServices.swift */; };
 		FA3BA1E32D166E9F00F47B21 /* UserInformationModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA3BA1E22D166E9F00F47B21 /* UserInformationModel.swift */; };
 		FA3BA1E62D16718700F47B21 /* SwiftyJSON in Frameworks */ = {isa = PBXBuildFile; productRef = FA3BA1E52D16718700F47B21 /* SwiftyJSON */; };
+		FA3BA1E82D169A6700F47B21 /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA3BA1E72D169A6700F47B21 /* Constant.swift */; };
+		FA3BA1EB2D169DA100F47B21 /* SVProgressHUD in Frameworks */ = {isa = PBXBuildFile; productRef = FA3BA1EA2D169DA100F47B21 /* SVProgressHUD */; };
+		FA3BA1EF2D169F1C00F47B21 /* UserTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FA3BA1EE2D169F1C00F47B21 /* UserTableViewCell.xib */; };
+		FA3BA1F02D169F1C00F47B21 /* UserTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA3BA1ED2D169F1C00F47B21 /* UserTableViewCell.swift */; };
+		FA3BA1F22D16A2D900F47B21 /* UserCellModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA3BA1F12D16A2D900F47B21 /* UserCellModel.swift */; };
+		FA3BA1F52D16A3A400F47B21 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = FA3BA1F42D16A3A400F47B21 /* Kingfisher */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -64,6 +70,10 @@
 		FA3BA1D32D14845800F47B21 /* ListUserInformationViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ListUserInformationViewController.xib; sourceTree = "<group>"; };
 		FA3BA1DF2D166ACE00F47B21 /* NetworkServices.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkServices.swift; sourceTree = "<group>"; };
 		FA3BA1E22D166E9F00F47B21 /* UserInformationModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInformationModel.swift; sourceTree = "<group>"; };
+		FA3BA1E72D169A6700F47B21 /* Constant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constant.swift; sourceTree = "<group>"; };
+		FA3BA1ED2D169F1C00F47B21 /* UserTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserTableViewCell.swift; sourceTree = "<group>"; };
+		FA3BA1EE2D169F1C00F47B21 /* UserTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = UserTableViewCell.xib; sourceTree = "<group>"; };
+		FA3BA1F12D16A2D900F47B21 /* UserCellModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserCellModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -71,6 +81,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FA3BA1F52D16A3A400F47B21 /* Kingfisher in Frameworks */,
+				FA3BA1EB2D169DA100F47B21 /* SVProgressHUD in Frameworks */,
 				FA3BA1E62D16718700F47B21 /* SwiftyJSON in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -155,6 +167,7 @@
 		FA3BA1CD2D1483DE00F47B21 /* ListUser */ = {
 			isa = PBXGroup;
 			children = (
+				FA3BA1EC2D169EF600F47B21 /* Cell */,
 				FA3BA1E12D166E6100F47B21 /* Model */,
 				FA3BA1CE2D14845800F47B21 /* ListUserInformationWorker.swift */,
 				FA3BA1CF2D14845800F47B21 /* ListUserInformationRouter.swift */,
@@ -194,6 +207,7 @@
 		FA3BA1DE2D16694F00F47B21 /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
+				FA3BA1E72D169A6700F47B21 /* Constant.swift */,
 			);
 			name = Utilities;
 			path = "Utilitíe";
@@ -203,8 +217,18 @@
 			isa = PBXGroup;
 			children = (
 				FA3BA1E22D166E9F00F47B21 /* UserInformationModel.swift */,
+				FA3BA1F12D16A2D900F47B21 /* UserCellModel.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		FA3BA1EC2D169EF600F47B21 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				FA3BA1ED2D169F1C00F47B21 /* UserTableViewCell.swift */,
+				FA3BA1EE2D169F1C00F47B21 /* UserTableViewCell.xib */,
+			);
+			path = Cell;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -225,6 +249,8 @@
 			name = TakeHome;
 			packageProductDependencies = (
 				FA3BA1E52D16718700F47B21 /* SwiftyJSON */,
+				FA3BA1EA2D169DA100F47B21 /* SVProgressHUD */,
+				FA3BA1F42D16A3A400F47B21 /* Kingfisher */,
 			);
 			productName = TakeHome;
 			productReference = FA3BA1992D1481ED00F47B21 /* TakeHome.app */;
@@ -300,6 +326,8 @@
 			mainGroup = FA3BA1902D1481ED00F47B21;
 			packageReferences = (
 				FA3BA1E42D16718700F47B21 /* XCRemoteSwiftPackageReference "SwiftyJSON" */,
+				FA3BA1E92D169DA100F47B21 /* XCRemoteSwiftPackageReference "SVProgressHUD" */,
+				FA3BA1F32D16A3A400F47B21 /* XCRemoteSwiftPackageReference "Kingfisher" */,
 			);
 			productRefGroup = FA3BA19A2D1481ED00F47B21 /* Products */;
 			projectDirPath = "";
@@ -317,6 +345,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FA3BA1EF2D169F1C00F47B21 /* UserTableViewCell.xib in Resources */,
 				FA3BA1A62D1481EE00F47B21 /* Assets.xcassets in Resources */,
 				FA3BA1D42D14845800F47B21 /* ListUserInformationViewController.xib in Resources */,
 				FA3BA1A92D1481EE00F47B21 /* Base in Resources */,
@@ -345,13 +374,16 @@
 			buildActionMask = 2147483647;
 			files = (
 				FA3BA1A12D1481ED00F47B21 /* ViewController.swift in Sources */,
+				FA3BA1F22D16A2D900F47B21 /* UserCellModel.swift in Sources */,
 				FA3BA1D52D14845800F47B21 /* ListUserInformationWorker.swift in Sources */,
 				FA3BA1D62D14845800F47B21 /* ListUserInformationRouter.swift in Sources */,
 				FA3BA1E02D166ACE00F47B21 /* NetworkServices.swift in Sources */,
+				FA3BA1F02D169F1C00F47B21 /* UserTableViewCell.swift in Sources */,
 				FA3BA1D72D14845800F47B21 /* ListUserInformationViewController.swift in Sources */,
 				FA3BA1E32D166E9F00F47B21 /* UserInformationModel.swift in Sources */,
 				FA3BA1D82D14845800F47B21 /* ListUserInformationInteractor.swift in Sources */,
 				FA3BA1D92D14845800F47B21 /* ListUserInformationConfigurator.swift in Sources */,
+				FA3BA1E82D169A6700F47B21 /* Constant.swift in Sources */,
 				FA3BA19D2D1481ED00F47B21 /* AppDelegate.swift in Sources */,
 				FA3BA19F2D1481ED00F47B21 /* SceneDelegate.swift in Sources */,
 			);
@@ -694,6 +726,22 @@
 				minimumVersion = 5.0.2;
 			};
 		};
+		FA3BA1E92D169DA100F47B21 /* XCRemoteSwiftPackageReference "SVProgressHUD" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SVProgressHUD/SVProgressHUD.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.3.1;
+			};
+		};
+		FA3BA1F32D16A3A400F47B21 /* XCRemoteSwiftPackageReference "Kingfisher" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/onevcat/Kingfisher.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 8.1.3;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -701,6 +749,16 @@
 			isa = XCSwiftPackageProductDependency;
 			package = FA3BA1E42D16718700F47B21 /* XCRemoteSwiftPackageReference "SwiftyJSON" */;
 			productName = SwiftyJSON;
+		};
+		FA3BA1EA2D169DA100F47B21 /* SVProgressHUD */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = FA3BA1E92D169DA100F47B21 /* XCRemoteSwiftPackageReference "SVProgressHUD" */;
+			productName = SVProgressHUD;
+		};
+		FA3BA1F42D16A3A400F47B21 /* Kingfisher */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = FA3BA1F32D16A3A400F47B21 /* XCRemoteSwiftPackageReference "Kingfisher" */;
+			productName = Kingfisher;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

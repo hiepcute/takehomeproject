@@ -20,9 +20,11 @@ protocol ListUserInformationWorkerLogic {
 class ListUserInformationWorker: ListUserInformationWorkerLogic {
     func fetchUserInformation(url: String) async throws -> [UserInformationModel] {
         let urlSession = URLSession.shared
+        let header = ["Content-Type": "application/json;charset=utf-8"]
         let networkServices = NetworkService(session: urlSession)
+       
         guard let url = URL(string: url) else { throw CommonError.URLinValid }
-        let model: [UserInformationModel] = try await networkServices.fetchData(from: url, responseType: [UserInformationModel].self)
+        let model: [UserInformationModel] = try await networkServices.fetchData(from: url, headers: header, responseType: [UserInformationModel].self)
         return model
         
     }

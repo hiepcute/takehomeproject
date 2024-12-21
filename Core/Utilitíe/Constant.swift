@@ -10,6 +10,6 @@ import Foundation
 
 struct Constant {
     struct APIEndPoint {
-        static let userInformationAPI = "https://api.github.com/users?per_page=20&since=100"
+        static let userInformationAPI = "https://api.github.com/users?per_page=2000&since=200"
     }
 }

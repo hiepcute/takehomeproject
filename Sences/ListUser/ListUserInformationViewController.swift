@@ -15,7 +15,7 @@ protocol ListUserInformationPresentationLogic: AnyObject {
     /// Fetches data successfully and performs appropriate actions upon success.
     /// Use this function to handle scenarios where data fetching completes successfully.
     /// Typically, you might update the UI, process the received data to tableview
-    func fetchDataSuccessFully()
+   @MainActor func fetchDataSuccessFully()
     
     /// Use this function to handle scenarios where an error occurs while fetching data.
     /// Typically, log the error, show an error message alert to the user,
@@ -58,6 +58,7 @@ class ListUserInformationViewController: UIViewController {
     private func setupTableView() {
         tableView.delegate = self
         tableView.dataSource = self
+        tableView.register(UINib(nibName: "UserTableViewCell", bundle: nil), forCellReuseIdentifier: UserTableViewCell.identifier)
     }
     
     // MARK: IBAction
@@ -73,22 +74,29 @@ extension ListUserInformationViewController: ListUserInformationPresentationLogi
     }
     
     func fetchDataSuccessFully() {
-        
+        self.tableView.reloadData()
     }
     
     func fetchDataError() {
         
     }
     
-    
 }
 
 extension ListUserInformationViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 1
+        return interactor.model.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        return UITableViewCell()
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: UserTableViewCell.identifier, for: indexPath) as? UserTableViewCell else { return UITableViewCell() }
+        let modelInteractor = interactor.model[indexPath.row]
+        let model = UserCellModel(imageViewURL: modelInteractor.avatar_url, name: modelInteractor.login)
+        cell.setupData(model: model)
+        return cell
+    }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return UITableView.automaticDimension
     }
 }

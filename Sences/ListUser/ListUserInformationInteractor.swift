@@ -10,13 +10,16 @@
 /// ListUserInformation Module Interactor Protocol
 protocol ListUserInformationInteractorLogic {
     func fetchUser()
+    var model: [UserInformationModel] { get }
 }
 
 /// ListUserInformation Module Interactor
 class ListUserInformationInteractor {
     weak var presenter: ListUserInformationPresentationLogic!
     weak var router: ListUserInformationRoutingLogic!
+    
     private var worker: ListUserInformationWorkerLogic
+    internal var model: [UserInformationModel] = []
     
     required init(withWorker worker: ListUserInformationWorkerLogic) {
         self.worker = worker
@@ -28,13 +31,18 @@ class ListUserInformationInteractor {
             do {
                 
                 let result = try await worker.fetchUserInformation(url: Constant.APIEndPoint.userInformationAPI)
+                self.updateModel(model: result)
                 presenter.hideLoading()
-                print("========== result === \(result)==============")
+                await presenter.fetchDataSuccessFully()
                 
             } catch {
                 
             }
         }
+    }
+    
+    func updateModel(model: [UserInformationModel]) {
+        self.model = model
     }
 }
 
