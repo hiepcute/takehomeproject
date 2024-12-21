@@ -159,6 +159,7 @@
 		FA3BA1CC2D1483D800F47B21 /* Sences */ = {
 			isa = PBXGroup;
 			children = (
+				FA3BA1F62D1706BF00F47B21 /* DetailsUser */,
 				FA3BA1CD2D1483DE00F47B21 /* ListUser */,
 			);
 			path = Sences;
@@ -229,6 +230,13 @@
 				FA3BA1EE2D169F1C00F47B21 /* UserTableViewCell.xib */,
 			);
 			path = Cell;
+			sourceTree = "<group>";
+		};
+		FA3BA1F62D1706BF00F47B21 /* DetailsUser */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = DetailsUser;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

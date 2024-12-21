@@ -92,10 +92,11 @@ extension ListUserInformationViewController: UITableViewDelegate, UITableViewDat
         guard let cell = tableView.dequeueReusableCell(withIdentifier: UserTableViewCell.identifier, for: indexPath) as? UserTableViewCell else { return UITableViewCell() }
         let modelInteractor = interactor.model[indexPath.row]
         let model = UserCellModel(imageViewURL: modelInteractor.avatar_url, name: modelInteractor.login)
+        cell.selectionStyle = .none
         cell.setupData(model: model)
         return cell
     }
-    
+   
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return UITableView.automaticDimension
     }
