@@ -29,12 +29,10 @@ class ListUserInformationInteractor {
         presenter.showLoading()
         Task {
             do {
-                
-                let result = try await worker.fetchUserInformation(url: Constant.APIEndPoint.userInformationAPI)
+                let result = try await worker.fetchUserInformation(url:APIEndPoint.userInformation(perPage: 20, since: 100))
                 self.updateModel(model: result)
                 presenter.hideLoading()
                 await presenter.fetchDataSuccessFully()
-                
             } catch let error as NetworkError {
                 presenter.hideLoading()
                 switch error {
@@ -43,7 +41,7 @@ class ListUserInformationInteractor {
                 case .decodingFailed:
                     await presenter.fetchDataError(error: "decodingFailed")
                 case .custom(let error):
-                   await presenter.fetchDataError(error: error)
+                    await presenter.fetchDataError(error: error)
                 }
                 
             }

@@ -10,7 +10,7 @@
 import UIKit
 
 protocol ListUserInformationRoutingLogic: AnyObject {
-    func navigationToDetailsViewcontroller()
+    func navigationToDetailsViewcontroller(userDetailModel: UserDetailsViewModel)
 }
 
 class ListUserInformationRouter {
@@ -18,8 +18,8 @@ class ListUserInformationRouter {
 }
 
 extension ListUserInformationRouter: ListUserInformationRoutingLogic {
-    func navigationToDetailsViewcontroller() {
-        let vc = DetailsUserConfigurator.viewcontroller()
+    func navigationToDetailsViewcontroller(userDetailModel: UserDetailsViewModel) {
+        let vc = DetailsUserConfigurator.viewcontroller(userDetailsModel: userDetailModel)
         viewController.navigationController?.pushViewController(vc, animated: false)
     }
     

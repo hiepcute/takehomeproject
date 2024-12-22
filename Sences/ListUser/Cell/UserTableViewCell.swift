@@ -60,14 +60,8 @@ class UserTableViewCell: UITableViewCell {
     
     private func setupLinkedInprofile() {
         let text = "https://www.linkedin.com/"
-        
-        // Tạo một NSMutableAttributedString với gạch chân và màu xanh
         let attributedString = NSMutableAttributedString(string: text)
-        
-        // Đặt màu xanh cho toàn bộ văn bản
         attributedString.addAttribute(.foregroundColor, value: UIColor.blue, range: (text as NSString).range(of: text))
-        
-        // Gạch chân toàn bộ văn bản
         attributedString.addAttribute(.underlineStyle, value: NSUnderlineStyle.single.rawValue, range: (text as NSString).range(of: text))
         linkedinLabel.attributedText = attributedString
     }

@@ -12,11 +12,11 @@ import UIKit
 class DetailsUserConfigurator {
     
     // MARK: Configuration
-    class func viewcontroller() -> DetailsUserViewController {
+    class func viewcontroller(userDetailsModel: UserDetailsViewModel) -> DetailsUserViewController {
         
         // MARK: Initialise components.
         let viewController = DetailsUserViewController(nibName: "DetailsUserViewController", bundle: nil)
-        let interactor = DetailsUserInteractor(withWorker: DetailsUserWorker())
+        let interactor = DetailsUserInteractor(withWorker: DetailsUserWorker(), userDetailsModel: userDetailsModel)
         let router = DetailsUserRouter()
         
         // MARK: link VIP components.

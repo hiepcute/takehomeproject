@@ -66,8 +66,7 @@ class ListUserInformationViewController: UIViewController {
     }
     
     @IBAction func didTapBackButton(_ sender: Any) {
-        let vc = DetailsUserConfigurator.viewcontroller()
-        self.navigationController?.pushViewController(vc, animated: false)
+      //  router.navigationToDetailsViewcontroller(userDetailModel: <#UserDetailsModel#>)
     }
     
     
@@ -87,7 +86,7 @@ extension ListUserInformationViewController: ListUserInformationPresentationLogi
         SVProgressHUD.dismiss()
     }
     
-    func fetchDataSuccessFully() {
+    @MainActor func fetchDataSuccessFully() {
         self.tableView.reloadData()
     }
     
@@ -112,6 +111,7 @@ extension ListUserInformationViewController: UITableViewDelegate, UITableViewDat
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-            router.navigationToDetailsViewcontroller()
+        let model = interactor.model[indexPath.row]
+        router.navigationToDetailsViewcontroller(userDetailModel: .init(imageViewURL: model.avatar_url, name: model.login))
     }
 }
