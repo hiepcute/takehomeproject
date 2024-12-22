@@ -34,6 +34,7 @@ class DetailsUserViewController: UIViewController {
     @IBOutlet weak var numberFollowerLabel: UILabel!
     @IBOutlet weak var numberFollwingLabel: UILabel!
     @IBOutlet weak var DetailsUserView: DetailsUser!
+    @IBOutlet weak var blogLabel: UILabel!
     
     // MARK: IBOutlet
     
@@ -71,6 +72,7 @@ class DetailsUserViewController: UIViewController {
 extension DetailsUserViewController: DetailsUserPresentationLogic {
     func fetchDataSuccessFully(model: DetailsUserModel) {
         setupFollowerAndFollowingLabel(model: model)
+        blogLabel.text = model.blog
         DetailsUserView.setLocationValue(value: model.location)
     }
     
