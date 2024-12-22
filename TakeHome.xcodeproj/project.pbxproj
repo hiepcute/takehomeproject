@@ -42,6 +42,10 @@
 		FA3BA20C2D17F64500F47B21 /* UserDetailsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA3BA20B2D17F64500F47B21 /* UserDetailsViewModel.swift */; };
 		FA3BA20E2D17F8FE00F47B21 /* FollowModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA3BA20D2D17F8FE00F47B21 /* FollowModel.swift */; };
 		FA3BA2112D17FB8300F47B21 /* DetailsUserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA3BA2102D17FB8300F47B21 /* DetailsUserModel.swift */; };
+		FA3BA2142D18451200F47B21 /* CoreDataRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA3BA2132D18451200F47B21 /* CoreDataRepository.swift */; };
+		FA3BA2172D18457E00F47B21 /* UserEntity.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = FA3BA2152D18457E00F47B21 /* UserEntity.xcdatamodeld */; };
+		FA3BA2192D18483B00F47B21 /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA3BA2182D18483B00F47B21 /* CoreDataManager.swift */; };
+		FA3BA21B2D1854C600F47B21 /* ErrorHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA3BA21A2D1854C600F47B21 /* ErrorHandler.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -98,6 +102,10 @@
 		FA3BA20B2D17F64500F47B21 /* UserDetailsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDetailsViewModel.swift; sourceTree = "<group>"; };
 		FA3BA20D2D17F8FE00F47B21 /* FollowModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FollowModel.swift; sourceTree = "<group>"; };
 		FA3BA2102D17FB8300F47B21 /* DetailsUserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsUserModel.swift; sourceTree = "<group>"; };
+		FA3BA2132D18451200F47B21 /* CoreDataRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataRepository.swift; sourceTree = "<group>"; };
+		FA3BA2162D18457E00F47B21 /* UserEntity.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = UserEntity.xcdatamodel; sourceTree = "<group>"; };
+		FA3BA2182D18483B00F47B21 /* CoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
+		FA3BA21A2D1854C600F47B21 /* ErrorHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorHandler.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -225,6 +233,9 @@
 		FA3BA1DD2D16694800F47B21 /* DataBase */ = {
 			isa = PBXGroup;
 			children = (
+				FA3BA2132D18451200F47B21 /* CoreDataRepository.swift */,
+				FA3BA2152D18457E00F47B21 /* UserEntity.xcdatamodeld */,
+				FA3BA2182D18483B00F47B21 /* CoreDataManager.swift */,
 			);
 			path = DataBase;
 			sourceTree = "<group>";
@@ -234,6 +245,7 @@
 			children = (
 				FA3BA1E72D169A6700F47B21 /* APIEndPoint.swift */,
 				FA3BA2032D170AFA00F47B21 /* UIviewcontroller+Extension.swift */,
+				FA3BA21A2D1854C600F47B21 /* ErrorHandler.swift */,
 			);
 			name = Utilities;
 			path = "Utilitíe";
@@ -441,6 +453,7 @@
 				FA3BA1D52D14845800F47B21 /* ListUserInformationWorker.swift in Sources */,
 				FA3BA1FE2D17070C00F47B21 /* DetailsUserWorker.swift in Sources */,
 				FA3BA1FF2D17070C00F47B21 /* DetailsUserRouter.swift in Sources */,
+				FA3BA21B2D1854C600F47B21 /* ErrorHandler.swift in Sources */,
 				FA3BA2002D17070C00F47B21 /* DetailsUserViewController.swift in Sources */,
 				FA3BA20C2D17F64500F47B21 /* UserDetailsViewModel.swift in Sources */,
 				FA3BA2012D17070C00F47B21 /* DetailsUserInteractor.swift in Sources */,
@@ -455,8 +468,11 @@
 				FA3BA1E82D169A6700F47B21 /* APIEndPoint.swift in Sources */,
 				FA3BA2112D17FB8300F47B21 /* DetailsUserModel.swift in Sources */,
 				FA3BA19D2D1481ED00F47B21 /* AppDelegate.swift in Sources */,
+				FA3BA2192D18483B00F47B21 /* CoreDataManager.swift in Sources */,
 				FA3BA2072D170E7600F47B21 /* DetailsUser.swift in Sources */,
 				FA3BA19F2D1481ED00F47B21 /* SceneDelegate.swift in Sources */,
+				FA3BA2142D18451200F47B21 /* CoreDataRepository.swift in Sources */,
+				FA3BA2172D18457E00F47B21 /* UserEntity.xcdatamodeld in Sources */,
 				FA3BA2042D170AFA00F47B21 /* UIviewcontroller+Extension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -833,6 +849,20 @@
 			productName = Kingfisher;
 		};
 /* End XCSwiftPackageProductDependency section */
+
+/* Begin XCVersionGroup section */
+		FA3BA2152D18457E00F47B21 /* UserEntity.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				FA3BA2162D18457E00F47B21 /* UserEntity.xcdatamodel */,
+			);
+			currentVersion = FA3BA2162D18457E00F47B21 /* UserEntity.xcdatamodel */;
+			name = UserEntity.xcdatamodeld;
+			path = /Users/macbook/Downloads/BuildingListsAndNavigation/hihi/Core/DataBase/UserEntity.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = FA3BA1912D1481ED00F47B21 /* Project object */;
 }

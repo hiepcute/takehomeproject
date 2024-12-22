@@ -40,12 +40,13 @@ class ListUserInformationViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupView()
+       // deleteAlldata()
         fetchDataOnLoad()
     }
     
     // MARK: Fetch ListUserInformation
     private func fetchDataOnLoad() {
-        interactor.fetchUser()
+        interactor.loadUserData()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -64,13 +65,7 @@ class ListUserInformationViewController: UIViewController {
         tableView.dataSource = self
         tableView.register(UINib(nibName: "UserTableViewCell", bundle: nil), forCellReuseIdentifier: UserTableViewCell.identifier)
     }
-    
-    @IBAction func didTapBackButton(_ sender: Any) {
-      //  router.navigationToDetailsViewcontroller(userDetailModel: <#UserDetailsModel#>)
-    }
-    
-    
-    // MARK: IBAction
+
 }
 
 // MARK: Connect View, Interactor, and Presenter
@@ -113,5 +108,9 @@ extension ListUserInformationViewController: UITableViewDelegate, UITableViewDat
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let model = interactor.model[indexPath.row]
         router.navigationToDetailsViewcontroller(userDetailModel: .init(imageViewURL: model.avatar_url, name: model.login))
+    }
+    
+    private func deleteAlldata() {
+        CoreDataManager.shared.deleteAllUsers()
     }
 }

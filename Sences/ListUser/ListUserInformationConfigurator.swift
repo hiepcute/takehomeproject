@@ -16,7 +16,8 @@ class ListUserInformationConfigurator {
         
         // MARK: Initialise components.
         let viewController = ListUserInformationViewController(nibName: "ListUserInformationViewController", bundle: nil)
-        let interactor = ListUserInformationInteractor(withWorker: ListUserInformationWorker())
+        let userRepository = UserRepository(context: CoreDataManager.shared.context)
+        let interactor = ListUserInformationInteractor(withWorker: ListUserInformationWorker(userRepository: userRepository))
         let router = ListUserInformationRouter()
         
         // MARK: link VIP components.
