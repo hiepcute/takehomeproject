@@ -8,7 +8,10 @@
 import Foundation
 import UIKit
 
-extension UIViewController {
+protocol AlertPresenting {
+    func showAlert(title: String, message: String, buttonTitle: String)
+}
+extension UIViewController: AlertPresenting{
     /// Displays an alert with a title, message, and a single close button.
     /// - Parameters:
     ///   - title: The title of the alert.

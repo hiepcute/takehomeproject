@@ -26,6 +26,7 @@ protocol ListUserInformationPresentationLogic: AnyObject {
     func hideLoading()
 }
 
+
 // MARK: View
 class ListUserInformationViewController: UIViewController {
     var interactor: ListUserInformationInteractorLogic!
@@ -97,7 +98,7 @@ extension ListUserInformationViewController: UITableViewDelegate, UITableViewDat
         let modelInteractor = interactor.model[indexPath.row]
         let model = UserCellModel(imageViewURL: modelInteractor.avatar_url, name: modelInteractor.login)
         cell.selectionStyle = .none
-        cell.setupData(model: model)
+        cell.`setupData`(model: model)
         return cell
     }
    

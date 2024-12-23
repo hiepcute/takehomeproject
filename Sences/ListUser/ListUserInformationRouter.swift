@@ -22,6 +22,4 @@ extension ListUserInformationRouter: ListUserInformationRoutingLogic {
         let vc = DetailsUserConfigurator.viewcontroller(userDetailsModel: userDetailModel)
         viewController.navigationController?.pushViewController(vc, animated: false)
     }
-    
-
 }

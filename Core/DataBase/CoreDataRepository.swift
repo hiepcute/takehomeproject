@@ -9,7 +9,7 @@ import Foundation
 import CoreData
 
 class UserRepository {
-    private let context: NSManagedObjectContext
+    let context: NSManagedObjectContext
 
     // Initialize UserRepository with the Core Data context
     init(context: NSManagedObjectContext) {

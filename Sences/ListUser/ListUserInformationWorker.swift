@@ -29,9 +29,11 @@ protocol ListUserInformationWorkerLogic {
 
 class ListUserInformationWorker: ListUserInformationWorkerLogic {
     private let userRepository: UserRepository
+    private let networkService: NetworkService
     
-    init(userRepository: UserRepository) {
+    init(userRepository: UserRepository, networkService: NetworkService = NetworkService()) {
         self.userRepository = userRepository
+        self.networkService = networkService
     }
     
     func loadUserDataFromLocal() throws -> [UserInformationModel] {
@@ -46,12 +48,9 @@ class ListUserInformationWorker: ListUserInformationWorkerLogic {
     }
     
     func fetchUserInformation(url: String) async throws -> [UserInformationModel] {
-        let urlSession = URLSession.shared
         let header = ["Content-Type": "application/json;charset=utf-8"]
-        let networkServices = NetworkService(session: urlSession)
-        
         guard let url = URL(string: url) else { throw CommonError.URLinValid }
-        let model: [UserInformationModel] = try await networkServices.fetchData(from: url, headers: header, responseType: [UserInformationModel].self)
+        let model: [UserInformationModel] = try await networkService.fetchData(from: url, headers: header, responseType: [UserInformationModel].self)
         return model
         
     }

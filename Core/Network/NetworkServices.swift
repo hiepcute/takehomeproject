@@ -8,7 +8,7 @@
 import Foundation
 
 /// Custom errors for the NetworkService.
-enum NetworkError: Error {
+enum NetworkError: Error, Equatable {
     /// throw error when get invalid response
     case invalidResponse
     case decodingFailed
