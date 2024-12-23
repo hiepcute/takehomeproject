@@ -1,15 +1,8 @@
-//
-//  MockNetwork.swift
-//  TakeHomeTests
-//
-//  Created by MACBOOK on 23/12/24.
-//
-
 import Foundation
 @testable import TakeHome
 
 class MockNetworkService: NetworkService {
-    var fetchDataResult: Any?
+    var mockUsers: [UserInformationModel] = []
     var fetchDataError: Error?
     
     override func fetchData<T: Decodable>(
@@ -23,9 +16,10 @@ class MockNetworkService: NetworkService {
             throw error
         }
         
-        guard let result = fetchDataResult as? T else {
-            fatalError("MockNetworkService did not return the expected type")
+        guard T.self == [UserInformationModel].self else {
+            throw NSError(domain: "MockNetworkService", code: -1, userInfo: [NSLocalizedDescriptionKey: "Unexpected type requested"])
         }
-        return result
+        
+        return mockUsers as! T
     }
 }
