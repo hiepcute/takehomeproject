@@ -1,6 +1,14 @@
 # Project Name
 
 The project uses the GitHub API to display a list of users that can be downloaded, and allows users to view detailed information.
+# Preview
+<img src="https://github.com/user-attachments/assets/26b65862-fcc6-4b35-afc7-2cfaa6bdaf6f" width="300" height="600" />
+<img src="https://github.com/user-attachments/assets/4c8a3ad3-453d-44f5-8340-b481a3bb1817" width="300" height="600" />
+
+
+
+
+
 ## 1. Libraries Used
 
 - **Kingfisher**: Used for downloading and caching images asynchronously.
