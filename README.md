@@ -41,38 +41,35 @@ The project uses the GitHub API to display a list of users that can be downloade
    - **Example in the project**: The `ListUserInformationViewController` displays the list of users, shows loading indicators, and allows navigation to a detailed user view.
 
 2. **Interactor**:
-   - **Role**: The **Interactor** contains the business logic and is responsible for fetching and processing data. It interacts with external sources, such as APIs or local databases (e.g., Core Data).
+   - **Role**: The **Interactor** contains the business logic and is responsible for fetching and processing data. It interacts with **Worker** to fetch Data or save Data to the local disk.
    - **Responsibilities**:
-     - Retrieve user data from the GitHub API or Core Data (if available).
+     - Retrieve user data from **Worker**.
+     - Handle data when the **If there is no data, it loads data from the GitHub API; otherwise, it loads local data from Core Data.**
      - Perform data manipulation and validation if needed.
-     - Pass data to the **Viewcontorller** for display.
-   - **Example in the project**: The `ListUserInformationInteractor` is responsible for fetching the user data either from the GitHub API or local storage, and sending it to the **Presenter**.
+     - Pass data or handle error to the **Viewcontorller** for display.
+   - **Example in the project**: The `ListUserInformationInteractor` is responsible for fetching the user data either from the GitHub API or local storage, and sending it to the **Viewcontroller**.
 
 3. **Worker**:
-   - **Role**: The **Presenter** acts as the intermediary between the **View** and the **Interactor**. It processes the data fetched by the **Interactor** and prepares it for display in the **View**.
+   - **Role**: The **Worker** A worker interacts with the API or database to perform tasks such as retrieving data from the database or fetching data locally.
    - **Responsibilities**:
-     - Receive data from the **Interactor**.
-     - Perform any data formatting or preparation needed.
-     - Update the **View** with the processed data or error states.
-   - **Example in the project**: The `ListUserInformationPresenter` processes the fetched user data and updates the view, handling success and error states.
+     - Receive data from the **API or DataBase**.
+   - **Example in the project**: The `ListUserInformationWorker` get data from github API or get data from CoreData.
 
-4. **Worker**:
-   - **Role**: The **Worker** is responsible for executing tasks like fetching data from an API, saving data to the database, or performing other background tasks. It is called by the **Interactor** and handles all the network requests or database-related tasks.
+4. **Router**:
+   - **Role**: The **Worker** Responsible for managing the navigation logic of the app.
    - **Responsibilities**:
-     - Fetch data from external sources like APIs.
-     - Handle background tasks such as saving or deleting data from Core Data.
-     - Perform any data manipulation needed before passing it back to the **Interactor**.
-   - **Example in the project**: The `ListUserInformationWorker` is responsible for fetching user data from the GitHub API or loading it from Core Data. It handles the actual network request and the saving of data to local storage.
+     - Navigation to destination viewcontroller.
+   - **Example in the project**: The `ListUserInformationRouter` is responsible to navigate to `DetailsViewcontroller`.
+  
+   
+5. **Viewcontroller**:
+   - **Role**: The **Viewcontroller** Responsible for managing logic view and get data from interactor.
+   - **Responsibilities**:
+     - get the user interaction from view and forward the interactor.
+   - **Example in the project**: The `ListUserInformationViewcontroller` is responsible to navigate to `DetailsViewcontroller`.
 
-### Workflow
-1. The **View** triggers user actions (e.g., tapping a button) and calls methods in the **Presenter**.
-2. The **Presenter** calls methods in the **Interactor** to fetch data (either from API or local storage).
-3. The **Interactor** delegates the fetching of data to the **Worker**.
-4. The **Worker** performs the task (e.g., network request or database operation), and sends the data back to the **Interactor**.
-5. The **Interactor** sends the data to the **Presenter**, which prepares it for display in the **View**.
-6. The **View** updates its UI with the data or shows loading/error states.
 
-## 4. Setup and Installation
+## 5. Setup and Installation
 
 1. Clone this repository to your local machine.
    ```bash
