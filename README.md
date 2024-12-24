@@ -76,3 +76,7 @@ The project uses the GitHub API to display a list of users that can be downloade
 1. Clone this repository to your local machine.
    ```bash
    git clone https://github.com/hiepcute/takehomeproject.git
+
+## Testing Status
+Due to the extensive number of unit tests, we haven't had time to implement additional tests and UI tests yet.
+
