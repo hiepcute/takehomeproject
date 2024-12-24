@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8BA3A9E12D1A554E00C1ED94 /* UserEntity.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 8BA3A9DF2D1A554E00C1ED94 /* UserEntity.xcdatamodeld */; };
 		FA008B192D1986F900F91A0C /* ListUserViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA008B182D1986F900F91A0C /* ListUserViewControllerTests.swift */; };
 		FA008B1C2D1988FF00F91A0C /* MockListUserInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA008B1B2D1988FF00F91A0C /* MockListUserInteractor.swift */; };
 		FA008B1E2D1989C200F91A0C /* MockListUserRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA008B1D2D1989C200F91A0C /* MockListUserRouter.swift */; };
@@ -57,7 +58,6 @@
 		FA3BA20E2D17F8FE00F47B21 /* FollowModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA3BA20D2D17F8FE00F47B21 /* FollowModel.swift */; };
 		FA3BA2112D17FB8300F47B21 /* DetailsUserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA3BA2102D17FB8300F47B21 /* DetailsUserModel.swift */; };
 		FA3BA2142D18451200F47B21 /* CoreDataRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA3BA2132D18451200F47B21 /* CoreDataRepository.swift */; };
-		FA3BA2172D18457E00F47B21 /* UserEntity.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = FA3BA2152D18457E00F47B21 /* UserEntity.xcdatamodeld */; };
 		FA3BA2192D18483B00F47B21 /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA3BA2182D18483B00F47B21 /* CoreDataManager.swift */; };
 		FA3BA21B2D1854C600F47B21 /* ErrorHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA3BA21A2D1854C600F47B21 /* ErrorHandler.swift */; };
 /* End PBXBuildFile section */
@@ -80,6 +80,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		8BA3A9E02D1A554E00C1ED94 /* UserEntity.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = UserEntity.xcdatamodel; sourceTree = "<group>"; };
 		FA008B182D1986F900F91A0C /* ListUserViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListUserViewControllerTests.swift; sourceTree = "<group>"; };
 		FA008B1B2D1988FF00F91A0C /* MockListUserInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockListUserInteractor.swift; sourceTree = "<group>"; };
 		FA008B1D2D1989C200F91A0C /* MockListUserRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockListUserRouter.swift; sourceTree = "<group>"; };
@@ -131,7 +132,6 @@
 		FA3BA20D2D17F8FE00F47B21 /* FollowModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FollowModel.swift; sourceTree = "<group>"; };
 		FA3BA2102D17FB8300F47B21 /* DetailsUserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsUserModel.swift; sourceTree = "<group>"; };
 		FA3BA2132D18451200F47B21 /* CoreDataRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataRepository.swift; sourceTree = "<group>"; };
-		FA3BA2162D18457E00F47B21 /* UserEntity.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = UserEntity.xcdatamodel; sourceTree = "<group>"; };
 		FA3BA2182D18483B00F47B21 /* CoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
 		FA3BA21A2D1854C600F47B21 /* ErrorHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorHandler.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -323,8 +323,8 @@
 		FA3BA1DD2D16694800F47B21 /* DataBase */ = {
 			isa = PBXGroup;
 			children = (
+				8BA3A9DF2D1A554E00C1ED94 /* UserEntity.xcdatamodeld */,
 				FA3BA2132D18451200F47B21 /* CoreDataRepository.swift */,
-				FA3BA2152D18457E00F47B21 /* UserEntity.xcdatamodeld */,
 				FA3BA2182D18483B00F47B21 /* CoreDataManager.swift */,
 			);
 			path = DataBase;
@@ -540,6 +540,7 @@
 				FA3BA1A12D1481ED00F47B21 /* ViewController.swift in Sources */,
 				FA3BA1F22D16A2D900F47B21 /* UserCellModel.swift in Sources */,
 				FA3BA20E2D17F8FE00F47B21 /* FollowModel.swift in Sources */,
+				8BA3A9E12D1A554E00C1ED94 /* UserEntity.xcdatamodeld in Sources */,
 				FA3BA1D52D14845800F47B21 /* ListUserInformationWorker.swift in Sources */,
 				FA3BA1FE2D17070C00F47B21 /* DetailsUserWorker.swift in Sources */,
 				FA3BA1FF2D17070C00F47B21 /* DetailsUserRouter.swift in Sources */,
@@ -562,7 +563,6 @@
 				FA3BA2072D170E7600F47B21 /* DetailsUser.swift in Sources */,
 				FA3BA19F2D1481ED00F47B21 /* SceneDelegate.swift in Sources */,
 				FA3BA2142D18451200F47B21 /* CoreDataRepository.swift in Sources */,
-				FA3BA2172D18457E00F47B21 /* UserEntity.xcdatamodeld in Sources */,
 				FA3BA2042D170AFA00F47B21 /* UIviewcontroller+Extension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -757,7 +757,7 @@
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 17.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -784,7 +784,7 @@
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 17.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -957,14 +957,13 @@
 /* End XCSwiftPackageProductDependency section */
 
 /* Begin XCVersionGroup section */
-		FA3BA2152D18457E00F47B21 /* UserEntity.xcdatamodeld */ = {
+		8BA3A9DF2D1A554E00C1ED94 /* UserEntity.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
-				FA3BA2162D18457E00F47B21 /* UserEntity.xcdatamodel */,
+				8BA3A9E02D1A554E00C1ED94 /* UserEntity.xcdatamodel */,
 			);
-			currentVersion = FA3BA2162D18457E00F47B21 /* UserEntity.xcdatamodel */;
-			name = UserEntity.xcdatamodeld;
-			path = /Users/macbook/Downloads/BuildingListsAndNavigation/hihi/Core/DataBase/UserEntity.xcdatamodeld;
+			currentVersion = 8BA3A9E02D1A554E00C1ED94 /* UserEntity.xcdatamodel */;
+			path = UserEntity.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;
 		};
