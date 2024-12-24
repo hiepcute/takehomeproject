@@ -33,6 +33,8 @@ The project uses the GitHub API to display a list of users that can be downloade
 ## 4. Architecture
 <img width="782" alt="image" src="https://github.com/user-attachments/assets/5d65b177-eff2-4215-99d6-e23c4db47cf5" />
 
+[Our architecture is based on the VIP architecture](https://clean-swift.com/)
+
 1. **View**: 
    - **Role**: The **View** is responsible for displaying the UI elements and handling user interaction (e.g., tapping buttons, scrolling lists).
    - **Responsibilities**:
@@ -66,7 +68,7 @@ The project uses the GitHub API to display a list of users that can be downloade
    - **Role**: The **Viewcontroller** Responsible for managing logic view and get data from interactor.
    - **Responsibilities**:
      - get the user interaction from view and forward the interactor.
-   - **Example in the project**: The `ListUserInformationViewcontroller` is responsible to navigate to `DetailsViewcontroller`.
+   - **Example in the project**: The `ListUserInformationViewcontroller` handle logic show error and and configure data to display view.
 
 
 ## 5. Setup and Installation
